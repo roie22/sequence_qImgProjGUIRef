@@ -76,8 +76,15 @@ void MainWindow::on_actionpaizhao_triggered()
             return;
         }
 
+        {
+            std::string fileName=get_current_time()+".jpg";
+            std::cout<<"save img to fileName= "<<fileName<< std::endl;
+            //        stringstream
+            cv::imwrite(fileName , frame);
+        }
+
         // 将 OpenCV 的 BGR 图像转换为 RGB（Qt 默认格式）
-        cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
+        if(1)cv::cvtColor(frame, frame, cv::COLOR_BGR2RGB);
 
         // 将 cv::Mat 转换为 QImage
         QImage qimage(frame.data, frame.cols, frame.rows, frame.step, QImage::Format_RGB888);
@@ -88,11 +95,6 @@ void MainWindow::on_actionpaizhao_triggered()
 
         // 显示图像
         ui->imageLabel->setPixmap(pixmap);
-
-        std::string fileName=get_current_time()+".jpg";
-        std::cout<<"save img to fileName= "<<fileName<< std::endl;
-//        stringstream
-        cv::imwrite(fileName , frame);
     }
 }
 
