@@ -54,7 +54,7 @@ MainWindow::~MainWindow()
 #include <ctime>
 
 #include <chrono>
-#include <format>  // C++20
+//#include <format>  // C++20
 #include <iostream>
 
 #include <chrono>

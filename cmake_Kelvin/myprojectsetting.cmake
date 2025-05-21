@@ -158,10 +158,10 @@ else()
   message(STATUS "other platform: ${CMAKE_SYSTEM_NAME}")
 endif(CMAKE_SYSTEM_NAME MATCHES "Linux")
 
-cmake_host_system_information(RESULT PRETTY_NAME QUERY DISTRIB_PRETTY_NAME)
-message(STATUS "${PRETTY_NAME}")
+#cmake_host_system_information(RESULT PRETTY_NAME QUERY DISTRIB_PRETTY_NAME)
+#message(STATUS "${PRETTY_NAME}")
 
-cmake_host_system_information(RESULT DISTRO QUERY DISTRIB_INFO)
+#cmake_host_system_information(RESULT DISTRO QUERY DISTRIB_INFO)
 foreach(VAR IN LISTS DISTRO)
   message(STATUS "${VAR}=`${${VAR}}`")
 endforeach()
