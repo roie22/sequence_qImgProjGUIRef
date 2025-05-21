@@ -7,11 +7,22 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    cap.open(0);
+    ui->comboBoxCamId->addItem("0");
+    ui->comboBoxCamId->addItem("1");
+    ui->comboBoxCamId->addItem("2");
+    ui->comboBoxCamId->addItem("3");
+     ui->comboBoxCamId->addItem("4");
+    ui->comboBoxCamId->currentText();
+
+    int  camId = ui->comboBoxCamId->currentText().toUInt();
+    if(!cap.isOpened()){
+        qDebug()<< "打开摄像头失败。 camId= "<<camId ;
+    }
+
     // 检查摄像头是否成功打开
     if (!cap.isOpened()) {
-        std::cerr << "Error: Could not open camera." << std::endl;
-        qDebug()<< "!cap.isOpened()";
+        std::cerr << "Error: Could not open camera. camId = " <<camId<< std::endl;
+        qDebug()<< "!cap.isOpened(),camId= "<<camId ;
         // return -1;
     }
 
@@ -21,10 +32,9 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 创建一个窗口显示实时画面
     // cv::namedWindow("Camera Preview", cv::WINDOW_AUTOSIZE);
-
     std::cout << "Press 's' to save a photo, 'q' to quit..." << std::endl;
 
-    // std::
+    setter=new SettingDialog(this);
 }
 
 MainWindow::~MainWindow()
@@ -65,7 +75,17 @@ std::string get_current_time() {
 
 void MainWindow::on_actionpaizhao_triggered()
 {
-    qDebug()<< "on_actionpaizhao_triggered. ";//<< std::endl;
+    qDebug()<< "on_actionpaizhao_triggered. ";
+
+    int  camId = ui->comboBoxCamId->currentText().toUInt();
+    if(!cap.isOpened())
+    {
+        cap.open(camId);
+    }
+
+    if(!cap.isOpened()){
+        qDebug()<< "打开摄像头失败。 camId= "<<camId ;
+    }
 
     {
         cv::Mat frame;
@@ -101,5 +121,11 @@ void MainWindow::on_actionpaizhao_triggered()
 void MainWindow::on_pushButton_clicked()
 {
     on_actionpaizhao_triggered();
+}
+
+#include "settingdialog.h"
+void MainWindow::on_actionOpenSettingDiag_triggered()
+{
+    setter->exec();
 }
 

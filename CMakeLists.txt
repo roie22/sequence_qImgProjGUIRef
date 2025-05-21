@@ -25,7 +25,7 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        mainwindow.ui
+        mainwindow.ui settingdialog.h settingdialog.cpp settingdialog.ui
         ${TS_FILES}
 )
 
