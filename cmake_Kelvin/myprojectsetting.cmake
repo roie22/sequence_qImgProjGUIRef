@@ -3,22 +3,21 @@
 # project(modules_cuda CUDA) # 这里只有CUDA也是可以的。 project(cuda VERSION 0.0.0
 # LANGUAGES CXX C CUDA) #
 # 仅仅cmake3.8之后的版本才使用这个语法支持cuda语言；低于3.8的版本使用find_package。例如 find_package(CUDA
-# 8.0)   # 为了获取编译器的版本号，所以才加上c cxx
+# 8.0)   # 为了获取编译器的版本号，所以才加上c cxx  
 
 #set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 ## set(CMAKE_CXX_STANDARD 11)  # 17
-#set(CMAKE_CXX_STANDARD_REQUIRED ON)
+## set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ## set(CMAKE_CXX_EXTENSIONS ON)
 
-set(Opt_QT 0)
+set(Opt_QT 1)
 if(Opt_QT)
   set(CMAKE_AUTOUIC ON)
   set(CMAKE_AUTOMOC ON)
   set(CMAKE_AUTORCC ON)
   find_package(
-    QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Network Xml Multimedia
-                                         MultimediaWidgets Widgets
+    QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Network Xml Multimedia MultimediaWidgets Widgets
   )# Widgets #WebEngineWidgets WebChannel Widgets LinguistTools Core Gui
    # WebEngineWidgets PrintSupport
   find_package(Qt${QT_VERSION_MAJOR} REQUIRED
@@ -392,6 +391,8 @@ if(CMAKE_CXX_COMPILER_VERSION)
   )
 endif()
 
+set(prefix_my ${prefix_my}_${CMAKE_HOST_SYSTEM})
+
 if(CMAKE_Fortran_COMPILER_VERSION)
   set(prefix_my "${prefix_my}_F_${CMAKE_Fortran_COMPILER_VERSION}")
 endif()
@@ -403,6 +404,7 @@ endif()
 
 # set(CMAKE_INSTALL_PREFIX
 # ${CMAKE_SOURCE_DIR}/../${PROJECT_NAME}_${PROJECT_VERSION}_QT_${QT_VERSION_MAJOR}_${QT_VERSION_MINOR}_${QT_VERSION_PATCH}_${toolChainMy}_${CMAKE_C_COMPILER_ID}_${CMAKE_C_COMPILER_VERSION}_${CMAKE_CXX_COMPILER_ID}_${CMAKE_CXX_COMPILER_VERSION}_${CMAKE_Fortran_COMPILER_ID}_${CMAKE_Fortran_COMPILER_VERSION}_CXX_${CMAKE_CXX_STANDARD}_${CMAKE_SYSTEM_PROCESSOR}_${CMAKE_CXX_COMPILER_ARCHITECTURE_ID}_cudaArch_${CMAKE_CUDA_ARCHITECTURES_MY}_cuda_${CUDA_VERSION}_install)
+
 set(CMAKE_INSTALL_PREFIX ${prefix_my}_install)
 # CMAKE_SYSTEM_NAME  toolChainMy
 

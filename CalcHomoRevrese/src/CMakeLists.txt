@@ -20,10 +20,9 @@ link_directories(${OpenCV_DIR})
 include(cmake_Kelvin/myprojectsetting.cmake)
 ##################################################
 
+file(GLOB allsourceheaders ./*.cpp ./*.h ./*.hpp ./*.ui ./*.qrc)
 
-subdirs(CalcHomoRevrese/src
-    proj_UsbCamWebCamShotQt/src
-    QtMouseMoveViewTranlated/src
-    QWidgetViewMove/src
-QWidgetViewResize/src
-    )
+add_executable(${NAME} main.cpp)
+target_link_libraries(${NAME} PRIVATE  ${OpenCV_LIBS})
+#target_link_libraries(${NAME} ${OpenCV_LIBS})
+

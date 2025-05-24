@@ -1,2 +1,9 @@
-*.user
+/*.user
 build
+*.jpg
+*.png
+*.bmp
+*.pbd
+*.ilk
+*.exe
+
