@@ -17,7 +17,7 @@ include_directories(${OpenCV_INCLUDE_DIRS})
 link_directories(${OpenCV_DIR})
 
 ##################################################
-include(cmake_Kelvin/myprojectsetting.cmake)
+#include(cmake_Kelvin/myprojectsetting.cmake)
 ##################################################
 
 file(GLOB allsourceheaders ./*.cpp ./*.h ./*.hpp ./*.ui ./*.qrc)

@@ -66,7 +66,7 @@ void checkPts(std::vector<cv::Point2f> pts_img_left,
 int main()
 {
     cout << "Hello World!" << endl;
-    cv::Mat src_left=cv::imread("../images/2025-05-21_16_24_48.jpg",1);
+    cv::Mat src_left=cv::imread("../images/CalcHomoRevrese/2025-05-21_16_24_48.jpg",1);
 
     cv::Mat imgCheckLeft ;
     /**
