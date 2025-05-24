@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(NAME CalcHomoRevrese)
-project(CalcHomoRevrese LANGUAGES CXX)
+set(NAME sequence_related)
+project(${NAME} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
