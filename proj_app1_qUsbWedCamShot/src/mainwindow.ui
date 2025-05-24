@@ -6,38 +6,102 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>898</width>
-    <height>661</height>
+    <width>1116</width>
+    <height>670</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QComboBox" name="comboBoxCamId"/>
+     <widget class="QTabWidget" name="tabWidget_2">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="imageLabel">
+          <property name="minimumSize">
+           <size>
+            <width>60</width>
+            <height>60</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgb(218, 255, 211);</string>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_4">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QLabel" name="imageLabel">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="minimumSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <widget class="QComboBox" name="comboBoxCamId">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>100</width>
+          <height>24</height>
+         </rect>
+        </property>
         <property name="minimumSize">
          <size>
-          <width>600</width>
-          <height>600</height>
+          <width>100</width>
+          <height>24</height>
          </size>
         </property>
-        <property name="styleSheet">
-         <string notr="true">background-color: rgb(218, 255, 211);</string>
-        </property>
-        <property name="text">
-         <string>TextLabel</string>
+        <property name="maximumSize">
+         <size>
+          <width>200</width>
+          <height>24</height>
+         </size>
         </property>
        </widget>
-      </item>
-      <item>
        <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>80</width>
+          <height>60</height>
+         </rect>
+        </property>
         <property name="minimumSize">
          <size>
           <width>60</width>
@@ -54,8 +118,13 @@
          <string>shot</string>
         </property>
        </widget>
-      </item>
-     </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Tab 2</string>
+       </attribute>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -64,8 +133,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>898</width>
-     <height>23</height>
+     <width>1116</width>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

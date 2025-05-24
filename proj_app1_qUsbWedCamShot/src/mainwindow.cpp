@@ -85,7 +85,11 @@ void MainWindow::on_actionpaizhao_triggered()
 
     if(!cap.isOpened()){
         qDebug()<< "打开摄像头失败。 camId= "<<camId ;
+        return ;
     }
+
+    cap.set(cv::CAP_PROP_FRAME_WIDTH, 1920);
+    cap.set(cv::CAP_PROP_FRAME_HEIGHT, 1080);
 
     {
         cv::Mat frame;

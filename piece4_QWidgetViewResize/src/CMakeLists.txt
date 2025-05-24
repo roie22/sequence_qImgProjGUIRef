@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(NAME QWidgetViewResize)
+set(NAME piece4_QWidgetViewResize)
 project(${NAME} VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

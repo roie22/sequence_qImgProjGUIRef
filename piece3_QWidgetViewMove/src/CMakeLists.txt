@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(NAME QWidgetViewMove)
+set(NAME piece3_QWidgetViewMove)
 project(${NAME} VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)

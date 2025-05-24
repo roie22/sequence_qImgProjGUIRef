@@ -52,7 +52,7 @@ if(Opt_CUDA)
       arch=compute_50,code=compute_50
       # -gencode arch=compute_86,code=compute_86
       -rdc=true)
-endif(1)
+endif( )
 
 if(NOT CMAKE_BUILD_TYPE)
   # set(CMAKE_BUILD_TYPE Debug CACHE STRING "Choose the type of build (Debug or

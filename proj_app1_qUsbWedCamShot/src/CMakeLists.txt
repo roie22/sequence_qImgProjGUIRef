@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(NAME  qUsbCamWebCamShotQt)
+set(NAME  proj_app1_qUsbWedCamShot)
 project(${NAME} VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_AUTOUIC ON)

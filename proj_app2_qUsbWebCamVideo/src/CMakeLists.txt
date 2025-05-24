@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(NAME  qUsbWebCamVideo)
+set(NAME  proj_app2_qUsbWebCamVideo)
 project(${NAME} VERSION 0.1 LANGUAGES CXX C)
 
 set(CMAKE_AUTOUIC ON)
