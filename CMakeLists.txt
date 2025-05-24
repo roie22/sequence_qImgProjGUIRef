@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.5)
 
-set(NAME1 sequence_related)
+set(NAME1 sequence_qImgProjGUIRef)
 project(${NAME1} LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
